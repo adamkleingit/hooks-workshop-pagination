@@ -10,19 +10,16 @@ function App() {
 
   useEffect(function fetchCurrentPage() {
     fetchData().then(setData);
-  }, []);
+  }, [currentPage]);
 
   const handlePageChange = e => {
     setCurrentPage(Number(e.target.value));
-    fetchData().then(setData);
   };
   const nextPage = () => {
     setCurrentPage(prev => prev + 1);
-    fetchData().then(setData);
   };
   const prevPage = () => {
     setCurrentPage(prev => prev - 1);
-    fetchData().then(setData);
   };
 
   return (
