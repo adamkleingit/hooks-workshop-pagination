@@ -8,7 +8,9 @@ function App() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => fetchData().then(setData), []);
+  useEffect(function fetchCurrentPage() {
+    fetchData().then(setData);
+  }, []);
 
   const handlePageChange = e => {
     setCurrentPage(Number(e.target.value));
